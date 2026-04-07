@@ -1,0 +1,80 @@
+{
+  "name": "@webbers/cloudflare-r2-medusa",
+  "version": "1.0.0",
+  "description": "Add Cloudflare R2 file provider to Medusa v2.",
+  "author": "Medusa (https://medusajs.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webbersagency/cloudflare-r2-medusa"
+  },
+  "files": [
+    ".medusa/server"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./workflows": "./.medusa/server/src/workflows/index.js",
+    "./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./providers/*": "./.medusa/server/src/providers/*/index.js",
+    "./*": "./.medusa/server/src/*.js",
+    "./admin": {
+      "import": "./.medusa/server/src/admin/index.mjs",
+      "require": "./.medusa/server/src/admin/index.js",
+      "default": "./.medusa/server/src/admin/index.js"
+    }
+  },
+  "keywords": [
+    "medusa",
+    "plugin",
+    "medusa-plugin-other",
+    "medusa-plugin",
+    "medusa-v2",
+    "cloudflare-r2",
+    "file-provider"
+  ],
+  "scripts": {
+    "build": "medusa plugin:build",
+    "dev": "medusa plugin:develop",
+    "prepublishOnly": "medusa plugin:build"
+  },
+  "devDependencies": {
+    "@medusajs/admin-sdk": "2.12.4",
+    "@medusajs/cli": "2.12.4",
+    "@medusajs/framework": "2.12.4",
+    "@medusajs/icons": "2.12.4",
+    "@medusajs/medusa": "2.12.4",
+    "@medusajs/test-utils": "2.12.4",
+    "@medusajs/ui": "4.0.25",
+    "@swc/core": "^1.7.28",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.2.25",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.2.11",
+    "yalc": "^1.0.0-pre.53"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "2.12.4",
+    "@medusajs/cli": "2.12.4",
+    "@medusajs/framework": "2.12.4",
+    "@medusajs/icons": "2.12.4",
+    "@medusajs/medusa": "2.12.4",
+    "@medusajs/test-utils": "2.12.4",
+    "@medusajs/ui": "4.0.25"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.3",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1025.0",
+    "@aws-sdk/lib-storage": "^3.1025.0",
+    "@aws-sdk/s3-request-presigner": "^3.1025.0",
+    "ulid": "^3.0.2"
+  }
+}
