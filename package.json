@@ -1,6 +1,6 @@
 {
   "name": "@webbers/cloudflare-r2-medusa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add Cloudflare R2 file provider to Medusa v2.",
   "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
