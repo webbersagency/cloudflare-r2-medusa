@@ -67,7 +67,7 @@ export default defineConfig({
 | `R2_SECRET_ACCESS_KEY` | Yes | R2 API token secret access key |
 | `R2_BUCKET` | Yes | Public bucket name |
 | `R2_ENDPOINT` | Yes | R2 S3-compatible endpoint: `https://<account-id>.r2.cloudflarestorage.com` |
-| `R2_PREFIX` | No | Key prefix applied to all uploaded files (e.g. `uploads/`) |
+| `R2_PREFIX` | No | Key prefix applied to all uploaded files (e.g. `uploads`; a trailing slash is added automatically) |
 | `R2_PRIVATE_BUCKET` | No | Private bucket name. Required when uploading files with `access: 'private'` |
 | `R2_PRIVATE_FILE_URL` | No | Base URL for the private bucket. Falls back to `R2_FILE_URL` if not set |
 
@@ -81,7 +81,7 @@ export default defineConfig({
 | `region` | `string` | — | Use `'auto'` for R2 |
 | `bucket` | `string` | — | Public bucket name |
 | `endpoint` | `string` | — | R2 S3-compatible endpoint URL |
-| `prefix` | `string` | `''` | Object key prefix applied to all uploads |
+| `prefix` | `string` | `''` | Object key prefix applied to all uploads; a trailing slash is added automatically |
 | `private_bucket` | `string` | — | Private bucket name |
 | `private_file_url` | `string` | `file_url` | Base URL for private bucket file URLs |
 | `cache_control` | `string` | — | `Cache-Control` header set on uploaded objects |

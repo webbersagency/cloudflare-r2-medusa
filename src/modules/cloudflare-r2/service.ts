@@ -50,6 +50,8 @@ type InjectedDependencies = {
 
 const DEFAULT_DOWNLOAD_EXPIRATION_DURATION_SECONDS = 60 * 60;
 
+const appendTrailingSlash = (prefix?: string) => (!prefix || prefix.endsWith('/') ? (prefix ?? '') : `${prefix}/`);
+
 // The Medusa fileKey encodes the bucket type to enable correct bucket routing.
 // Format: "pub|<s3key>" for public bucket, "prv|<s3key>" for private bucket.
 const BUCKET_PREFIX_PUBLIC = 'pub';
@@ -79,7 +81,7 @@ export class CloudflareR2ProviderService extends AbstractFileProviderService {
       region: options.region,
       bucket: options.bucket,
       endpoint: options.endpoint,
-      prefix: options.prefix ?? '',
+      prefix: appendTrailingSlash(options.prefix),
       privateBucket: options.private_bucket,
       privateFileUrl: options.private_file_url,
       cacheControl: options.cache_control,
